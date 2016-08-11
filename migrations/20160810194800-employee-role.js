@@ -15,7 +15,7 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  db.createTable('person', {
+    db.createTable('employee_role', {
     id:
       {
         type: 'uuid',
@@ -28,24 +28,19 @@ exports.up = function(db) {
         unique: true,
         foreignKey:
                     {
-                      name:'person_transaction_entry_id_fk',
-											table: 'transaction_entry',
+                      name:'employee_role_transaction_entry_id_fk',
+                      table: 'transaction_entry',
                       mapping: 'id',
                       rules: {
-           										onDelete: 'NO ACTION',
-            									onUpdate: 'NO ACTION'
-          						}
+                              onDelete: 'NO ACTION',
+                              onUpdate: 'NO ACTION'
+                      }
                     },
         defaultValue: new String('new_te()')
       },
     name: 'TEXT',
-    phone_number: 'TEXT',
-    mobile_number: 'TEXT',
-    fax_number: 'TEXT',
-    email: 'TEXT',
-    notes: 'TEXT'
   });
-  return null
+ return null;
 };
 
 exports.down = function(db) {

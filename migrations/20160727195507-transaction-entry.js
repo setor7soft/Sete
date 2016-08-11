@@ -32,6 +32,8 @@ exports.up = function(db) {
         defaultValue: true
       }
   });
+
+  return null
 };
 
 exports.down = function(db) {
