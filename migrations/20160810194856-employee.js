@@ -52,7 +52,6 @@ exports.up = function(db) {
                       }
                     }
       },
-
       role_id:
       {
         type: 'uuid',
@@ -67,6 +66,48 @@ exports.up = function(db) {
                       }
                     }
      },
+     military_data_id:
+          {
+            type: 'uuid',
+            foreignKey:
+                        {
+                          name:'employee_military_data_id_fk',
+                          table: 'military_data',
+                          mapping: 'id',
+                          rules: {
+                                  onDelete: 'NO ACTION',
+                                  onUpdate: 'NO ACTION'
+                          }
+                        }
+         },
+     voter_data_id:
+         {
+                   type: 'uuid',
+                   foreignKey:
+                               {
+                                 name:'employee_voter_data_id_fk',
+                                 table: 'voter_data',
+                                 mapping: 'id',
+                                 rules: {
+                                         onDelete: 'NO ACTION',
+                                         onUpdate: 'NO ACTION'
+                                 }
+                               }
+                },
+     work_permit_data_id:
+         {
+                   type: 'uuid',
+                   foreignKey:
+                               {
+                                 name:'employee_work_permit_data_id_fk',
+                                 table: 'work_permit_data',
+                                 mapping: 'id',
+                                 rules: {
+                                         onDelete: 'NO ACTION',
+                                         onUpdate: 'NO ACTION'
+                                 }
+                               }
+                },
 
     status: 'employee_status',
     salary: {

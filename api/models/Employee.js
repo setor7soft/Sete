@@ -35,6 +35,7 @@ module.exports = {
       model: 'person',
       unique: true
     },
+
     role_id: {
       model: 'employeeRole',
       unique: true
@@ -42,7 +43,21 @@ module.exports = {
     employee_role_history: {
       collection: 'employeeRoleHistory',
       via: 'employee_id'
+    },
+
+    work_permit_data_id: {
+          model: 'workPermitData',
+          unique: true
+        },
+    voter_data_id: {
+          model: 'voterData',
+          unique: true
+        },
+    military_data_id: {
+      model: 'militaryData',
+      unique: true
     }
+
 
   }
 };
