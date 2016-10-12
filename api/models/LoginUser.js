@@ -1,16 +1,16 @@
 /**
- * VoterData.js
+ * LoginUser.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
-
   autoPK: false,
   autoCreatedAt: false,
   autoUpdatedAt: false,
-  tableName: 'voter_date',
+  tableName: 'login_user',
+
   attributes: {
     id: {
       type: 'string',
@@ -18,13 +18,20 @@ module.exports = {
       index: true,
       unique: true
     },
-    employee: {
-      collection: 'employee',
-      via: 'voter_data_id'
+    username: 'text',
+    pw_hash: 'text',
+    is_active: 'boolean',
+    person_id : {
+      model: 'Person',
+      unique: true
     },
-    number: 'text',
-    section: 'text',
-    zone: 'text'
-
+    //profile_id : {
+    //  model: 'UserProfile',
+    //  unique: true
+    //},
+    credit_check_history_id: {
+      collection: 'creditCheckHistory',
+      via: 'user_id'
+    }
   }
 };

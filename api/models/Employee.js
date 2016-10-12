@@ -12,11 +12,11 @@ module.exports = {
 
   attributes: {
     id: {
-          type: 'string',
-          primaryKey: true,
-          index: true,
-          unique: true
-        },
+      type: 'string',
+      primaryKey: true,
+      index: true,
+      unique: true
+    },
     status: {
       type: 'string',
       enum: ['normal', 'away', 'vacation', 'off']
@@ -35,7 +35,6 @@ module.exports = {
       model: 'person',
       unique: true
     },
-
     role_id: {
       model: 'employeeRole',
       unique: true
@@ -44,21 +43,17 @@ module.exports = {
       collection: 'employeeRoleHistory',
       via: 'employee_id'
     },
-
     work_permit_data_id: {
-          model: 'workPermitData',
-          unique: true
-        },
+      model: 'workPermitData',
+      unique: true
+    },
     voter_data_id: {
-          model: 'voterData',
-          unique: true
-        },
+      model: 'voterData',
+      unique: true
+    },
     military_data_id: {
       model: 'militaryData',
       unique: true
     }
-
-
   }
 };
-
